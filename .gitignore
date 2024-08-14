@@ -1,0 +1,14 @@
+# Artifacts
+bin/
+
+# D
+.dub
+docs.json
+__dummy.html
+docs/
+/ultralight-godot
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

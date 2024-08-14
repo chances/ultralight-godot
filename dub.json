@@ -1,0 +1,14 @@
+{
+  "name": "ultralight-godot",
+  "description": "Godot integration for Ultralight, a lightweight, high-performance HTML renderer for game and app developers",
+  "copyright": "Copyright © 2024, Chance Snow",
+  "license": "BSD-3-Clause",
+  "authors": [
+    "Chance Snow <git@chancesnow.me>"
+  ],
+  "targetPath": "bin",
+  "targetType": "dynamicLibrary",
+  "dependencies": {
+    "ultralight": "~>0.3.0"
+  }
+}
