@@ -1,0 +1,1 @@
+extends InterpolatedCamera3D

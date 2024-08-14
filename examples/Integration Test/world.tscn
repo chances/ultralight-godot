@@ -1,3 +1,59 @@
-[gd_scene format=3 uid="uid://b216mfv133w6y"]
+[gd_scene load_steps=11 format=3 uid="uid://b216mfv133w6y"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_hms6o"]
+[ext_resource type="Shader" path="res://Sky.gdshader" id="1_uchfb"]
+[ext_resource type="Script" path="res://Camera.gd" id="1_vc7hp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xg77a"]
+shader = ExtResource("1_uchfb")
+shader_parameter/color = Color(0, 0.753, 1, 1)
+shader_parameter/horizon = Color(0.2, 0.6, 1, 1)
+
+[sub_resource type="Sky" id="Sky_vt1xu"]
+sky_material = SubResource("ShaderMaterial_xg77a")
+
+[sub_resource type="Environment" id="Environment_2uht0"]
+background_mode = 2
+sky = SubResource("Sky_vt1xu")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_iyc6n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ei2j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yl0l"]
+albedo_color = Color(0.651, 0.84, 0.63, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qf6ta"]
+size = Vector2(1, 1)
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_hms6o")
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2uht0")
+camera_attributes = SubResource("CameraAttributesPractical_iyc6n")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="FocalPoint" type="Node3D" parent="."]
+top_level = true
+
+[node name="Camera" type="Camera3D" parent="FocalPoint" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6, 6)
+projection = 1
+far = 2000.0
+script = ExtResource("1_vc7hp")
+target = NodePath("..")
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_7ei2j")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(2000, 0, 0, 0, 2000, 0, 0, 0, 2000, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_3yl0l")
+mesh = SubResource("PlaneMesh_qf6ta")

@@ -21,6 +21,10 @@ config/icon="res://logo.png"
 
 project/assembly_name="Integration Test"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/interpolated_camera_3d/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="mobile"
