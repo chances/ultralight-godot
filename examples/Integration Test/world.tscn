@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b216mfv133w6y"]
+[gd_scene load_steps=11 format=3 uid="uid://b216mfv133w6y"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_hms6o"]
 [ext_resource type="Shader" path="res://Sky.gdshader" id="1_uchfb"]
@@ -8,7 +8,6 @@
 shader = ExtResource("1_uchfb")
 shader_parameter/color = Color(0.2, 0.6, 1, 1)
 shader_parameter/horizon = Color(0.5, 0.75, 1, 1)
-shader_parameter/hazePeriod = Vector2(5, 10)
 
 [sub_resource type="Sky" id="Sky_vt1xu"]
 sky_material = SubResource("ShaderMaterial_xg77a")

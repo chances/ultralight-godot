@@ -1,7 +1,7 @@
 shader_type sky;
 
 uniform vec3 color: source_color = vec3(0.2, 0.6, 1.0);
-uniform vec3 horizon: source_color = vec3(0.651, 0.84, 0.63);
+uniform vec3 horizon: source_color = vec3(0.5, 0.75, 1);
 
 vec3 skyAt(vec3 eye) {
 	float factor = clamp(eye.y / 0.1, 0, 1);
