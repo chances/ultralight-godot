@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://world.gd" id="1_hms6o"]
 [ext_resource type="Shader" path="res://Sky.gdshader" id="1_uchfb"]
 [ext_resource type="Script" path="res://Camera.gd" id="1_vc7hp"]
+[ext_resource type="Script" path="res://Sun.gd" id="3_rp8qp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xg77a"]
 shader = ExtResource("1_uchfb")
@@ -39,6 +40,7 @@ camera_attributes = SubResource("CameraAttributesPractical_iyc6n")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
+script = ExtResource("3_rp8qp")
 
 [node name="FocalPoint" type="Node3D" parent="."]
 top_level = true
