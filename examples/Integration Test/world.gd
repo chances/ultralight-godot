@@ -2,8 +2,7 @@
 
 @onready var env = $Environment
 @onready var sun = $Sun
-@onready var camera = $Camera
+@onready var camera = $Camera as InterpolatedCamera3D
 
-func _ready():
-	#camera.look_at($FocalPoint.basis)
-	pass
+func _init():
+  pass
